@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links</title>
+  <link rel="stylesheet" href="style.css" />
+<style>
+  /* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f6f8fa;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+/* Navbar */
+.navbar {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 600;
+  text-decoration: none;
+  color: #2563eb;
+}
+
+.nav-center a,
+.nav-right a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 14px;
+}
+
+.nav-center a:hover,
+.nav-right a:hover {
+  color: #2563eb;
+}
+
+/* Main container */
+.container {
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #e11d48;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Disclaimer box */
+.disclaimer {
+  background: #e5e7eb;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+}
+
+.disclaimer strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  padding-bottom: 40px;
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <a href="#" class="brand">Albin Jose</a>
+  </div>
+
+  <nav class="nav-center">
+    <a href="https://albin043.neocities.org/">Blog</a>
+    <a href="#">Videos</a>
+    <a href="uses.html">Uses</a>
+    <a href="links.html" class="active">Links</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html">Donate</a>
+  </nav>
+
+  <div class="nav-right">
+    <a href="https://github.com/Albin0438">GitHub</a>
+    <a href="https://mastodon.social/@Albin945">Mastodon</a>
+    <a href="#">YouTube</a>
+    <a href="#">RSS</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <h1>Links</h1>
+
+  <p>
+    Here are some links to other websites that I find useful or interesting.
+    Since search engines tend to only rank the most popular sites with few
+    exceptions, <a href="#">finding interesting small websites is increasingly difficult</a>.
+    By providing direct liks to those services for newbies i can do something to solve such issues. Feel free to explore and enjoy!.
+  </p>
+
+  <div class="disclaimer">
+    <strong>Disclaimer</strong>
+    <p>
+      Linking a website here does not constitute an endorsement of everything
+      they've ever posted.
+    </p>
+  </div>
+
+  <section>
+    <h2>Interesting Websites by Individuals</h2>
+    <p class="section-desc">
+      Websites not about any specific topic, but included because I like their writing.
+    </p>
+
+    <ul>
+      <li><a href="#">~bt</a></li>
+      <li><a href="#">Cheapskate's Guide</a></li>
+      <li><a href="#">CozyNet</a></li>
+      <li><a href="#">Drew DeVault</a></li>
+      <li><a href="#">Jared White</a></li>
+      <li><a href="#">Luke Smith</a></li>
+      <li><a href="#">Manuel Moreale</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Web Development</h2>
+    <p class="section-desc">
+      Websites and blogs about web development (without the bloat).
+    </p>
+
+    <ul>
+      <li><a href="#">Go Make Things</a></li>
+      <li><a href="#">The Spicy Web</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>YouTube</h2>
+    <p class="section-desc">
+      I purposefully don't watch much YouTube anymore, because I find it very hard
+      to responsibly use the website without being affected by the algorithm.
+      The few channels I still subscribe to, I do so via RSS.
+    </p>
+
+    <ul>
+      <li><a href="#">Natural Hypertrophy</a></li>
+      <li><a href="#">Uncommon Sense</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Interesting Articles</h2>
+    <p class="section-desc">
+      Articles I've read recently (or not so recently).
+    </p>
+
+    <ul>
+      <li><a href="#">Say No to Self-Deprecating Humor</a></li>
+      <li><a href="#">How the Blog Broke the Web</a></li>
+      <li><a href="#">My Website is a Personal Museum</a></li>
+      <li><a href="#">The Great Gaslighting of the JavaScript Era</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Uncopyrighted by Albin Jose. Last built March 5th, 2026.
+  </p>
+  <p>
+    Simply Built with Neocities. View the source code on GitHub.
+  </p>
+</footer>
+
+</body>
+</html>
