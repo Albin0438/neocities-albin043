@@ -1,119 +1,148 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Albin Jose | Developer</title>
+
+<meta name="description" content="Albin Jose - Web Developer focused on minimal, fast, privacy-friendly websites.">
+
 <link rel="icon" href="favicon/icons8-favicon-48.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icons8-favicon-48.png">
-<title>Personal Home</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-  <div class="logo"><a href="index.html">Home</a></div>
+  <div class="logo"><a href="index.html">Albin</a></div>
 
   <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="projects.html">Projects</a>
     <a href="blog.html">Blog</a>
     <a href="uses.html">Uses</a>
-    <a href="links.html">Links</a>
     <a href="contact.html">Contact</a>
-    <a href="donate.html">Donate</a>
   </nav>
-
 </header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h1>Hi there, I'm Albin Jose. <br>Welcome to My Blog Page.</h1>
-        <br>
+<main>
 
-        <div>
-          <img src="images/pexels-knownasovan-57690.jpg" alt="image" width="800" height="auto"/>
-        </div>
+  <!-- HERO -->
 
-        <br>
-        <h3>This is a simple website designed using HTML and CSS. But in the future site will be improved with many useful features.</h3>
-        <Br>
-        <Br>
-          <h3><u>About Me:</u></h3>
-          <br>
-        <p>
-            I'm a <strong>Web Developer</strong> and <strong>Programmer</strong> who enjoys building
-             simple, understandable websites and sharing what I learn. I'm passionate about
-             digital minimalism and believe the web works best when it's clean, accessible,
-             and independent.
-        </p>
+  <section class="hero">
+    <h1>I build simple, fast, and privacy-focused websites.</h1>
 
-        <p>
-             In my free time, I enjoy reading books, journaling, and writing small blog posts.
-           I value privacy and try to avoid unnecessary dependence on big tech platforms.
-           Instead of publishing on heavily censored or paywalled platforms, I prefer
-           building and maintaining my own websites to share my thoughts while continuously
-            improving my skills.
-        </p>
-        <p>
-          This site is my home base on the internet. I write about alot of things! <br> Something like Web Development,
-          , Python Programming, Linux and Open-Source World, Minimalism, and the Books I'm currently reading.
-        </p>
-      </div>
-    </section>
+```
+<p>
+  I'm <strong>Albin Jose</strong>, a developer who enjoys creating clean,
+  minimal websites and sharing what I learn along the way.
+</p>
 
-    <section class="card">
-      <h2>Looking for something to interact with?</h2>
-      <ul>
-        <li>Below you can see my latest <strong>Blog Posts</strong>.<br>
-          The full list of blogs is available on the <a href="blog.html">Blog</a> section.<br>
-        <li>📜 Find my scripts and other small projects on <a href="https://github.com/Albin0438/neocities-albin043">GitHub</a>.<br>
-        <li>💻 See what tools I use on the <a href="uses.html">Uses</a> page.</li>
-        <li>✉️ Want to get in touch? Then feel free to send me a<a href="mailto:albin043@proton.me"> Email.</a> I will make sure to reply as soon as possible to your Emails.</li>
-      </ul>
-    </section>
+<p class="small-note">
+  Built with HTML, CSS, and Python. No frameworks.
+</p>
 
-    <section class="posts">
+<div class="hero-buttons">
+  <a href="projects.html" class="btn">View Projects</a>
+  <a href="contact.html" class="btn-outline">Contact Me</a>
+  <a href="https://github.com/Albin0438" class="btn-outline">GitHub</a>
+</div>
+```
 
-      <h2>Latest Blog Posts</h2>
+  </section>
 
-      <div class="post">
-        <small><span class="date">Mar 25, 2026</span></small>
-        <a href="blogs/mint.html">Why use Linux Mint as a Beginner?</a>
-      </div>
+  <!-- ABOUT -->
 
-      <div class="post">
-        <span class="date">April 23, 2026</span>
-        <a href="blogs/custom-rom-installation-gone-wrong.html">When Custom ROM Installation Gone Wrong.</a>
-      </div>
+  <section class="about">
+    <h2>About</h2>
 
-      <div class="post">
-        <span class="date">April 24, 2026</span>
-        <a href="blogs/distro-hopping-cachyos.html">My Distro-hopping Ended up in CachyOS.</a>
-      </div>
+```
+<p>
+  I focus on building understandable, lightweight websites using HTML, CSS,
+  and Python. I care about performance, readability, and long-term simplicity.
+</p>
 
-      <div class="post">
-        <small><span class="date">Mar 26, 2026</span></small>
-        <a href="blogs/social.html">The Illusion of Connection: How Social Media Masks Our Struggles</a>
-      </div>
+<p>
+  Outside coding, I write about Linux, minimalism, and digital independence.
+  This site is my personal space on the internet—no algorithms, no noise.
+</p>
+```
 
-      <div class="post">
-        <small><span class="date">Mar 27, 2026</span></small>
-        <a href="blogs/atheism.html">Illusions of Faith: The Human Construct of Religion and the Search for Meaning</a>
-      </div>
+  </section>
 
-    </section>
-  </main>
+  <!-- PROJECTS PREVIEW -->
+
+  <section class="projects">
+    <h2>Projects</h2>
+
+```
+<div class="project">
+  <h3>Personal Meals Tracker</h3>
+  <p>Simple desktop app built with Python (Tkinter) to track meals and notes.</p>
+  <a href="projects.html">View Project →</a>
+</div>
+
+<div class="project">
+  <h3>Portfolio Website</h3>
+  <p>This site. Built with pure HTML & CSS focusing on speed and simplicity.</p>
+  <a href="projects.html">View Source →</a>
+</div>
+
+<p><a href="projects.html">See all projects →</a></p>
+```
+
+  </section>
+
+  <!-- BLOG PREVIEW -->
+
+  <section class="posts">
+    <h2>Latest Writing</h2>
+
+```
+<div class="post">
+  <span class="date">Apr 24, 2026</span>
+  <a href="blogs/distro-hopping-cachyos.html">My Distro-hopping Ended up in CachyOS</a>
+</div>
+
+<div class="post">
+  <span class="date">Apr 23, 2026</span>
+  <a href="blogs/custom-rom-installation-gone-wrong.html">When Custom ROM Installation Went Wrong</a>
+</div>
+
+<div class="post">
+  <span class="date">Feb 27, 2026</span>
+  <a href="blogs/mint.html">Why Linux Mint Is Still the Best Starting Point</a>
+</div>
+
+<p><a href="blog.html">Read all posts →</a></p>
+```
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="contact-cta">
+    <h2>Get in touch</h2>
+    <p>If you want to collaborate or just talk tech, feel free to reach out.</p>
+    <a href="mailto:albin043@proton.me" class="btn">Send Email</a>
+    <p><a href="support.html">Support this site →</a></p>
+  </section>
+
+</main>
 
 <footer>
   <hr>
-  <hr>
-  <hr>
-  <hr>
-  <br>
-  <br>
+
   <div class="footer-icons">
     <a href="https://github.com/Albin0438">GitHub</a>
     <a href="https://mastodon.social/@Albin945">Mastodon</a>
+    <a href="support.html">Support</a>
   </div>
+
+  <p>© 2026 Albin Jose</p>
 </footer>
+
 </body>
 </html>
