@@ -1,6 +1,6 @@
 # 🌐 neocities-albin043
 
-A personal blog website built using HTML and CSS.
+A minimal personal website built with pure HTML and CSS.
 
 🔗 **Live Website:**
 https://albin0438.github.io/neocities-albin043/
@@ -9,17 +9,19 @@ https://albin0438.github.io/neocities-albin043/
 
 ## 📖 About
 
-This project is a simple multi-page website where I share my ideas, interests, and learning journey.
-It focuses on clean design and building with core web technologies without using frameworks.
+This is my personal space on the web where I write about technology, Linux, and my learning journey.
+
+The goal of this project is to build something simple, fast, and independent—without relying on frameworks, heavy tooling, or external platforms.
 
 ---
 
 ## ✨ Features
 
-* Multi-page layout
-* Clean and minimal design
-* Lightweight and fast
-* Built with pure HTML & CSS
+* Multi-page static website
+* Minimal and distraction-free design
+* Fast loading with no JavaScript
+* Consistent layout across pages
+* Fully responsive
 
 ---
 
@@ -27,6 +29,17 @@ It focuses on clean design and building with core web technologies without using
 
 * HTML
 * CSS
+
+No frameworks, no libraries.
+
+---
+
+## 🎯 Philosophy
+
+* Keep things simple
+* Avoid unnecessary complexity
+* Build using core technologies
+* Focus on readability and performance
 
 ---
 
@@ -38,5 +51,7 @@ Deployed using GitHub Pages from the `main` branch.
 
 ## 📬 Contact
 
-Check the contact page on the website:
+Visit the contact page:
 https://albin0438.github.io/neocities-albin043/contact.html
+
+Or reach out via GitHub.
