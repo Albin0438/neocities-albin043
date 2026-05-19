@@ -10,7 +10,7 @@
 
     <body>
         <div class="wrapper">
-            <form action="">
+            <form onsubmit="handleRegistration(event)">
 
                 <h1>Registration</h1>
                 <div class="input-box">
@@ -19,11 +19,28 @@
                 <div class="input-box">
                     <input type="email" placeholder="email" required>
                 </div>
-                <div class="input-box">
-                    <input type="password" placeholder="new password" required>
+                <div class="input-box password-container">
+                    <input 
+                        type="password" 
+                        id="password"
+                        placeholder="new password" 
+                        minlength="15"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{15,}"
+                        title="Password must be at least 15 characters long and include uppercase and lowercase letters, a number, and a special character."
+                        required
+                    >
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('password')">👁️</button>
                 </div>
-                <div class="input-box">
-                    <input type="password" placeholder="retype new password" required>
+
+                <div class="input-box password-container">
+                    <input 
+                        type="password" 
+                        id="confirm-password"
+                        placeholder="retype new password" 
+                        minlength="15"
+                        required
+                    >
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">👁️</button>
                 </div>
 
                 <div class="registration-actions">
@@ -37,5 +54,6 @@
 
             </form>
         </div>
+        <script src="js/script.js"></script>
     </body>
 </html>

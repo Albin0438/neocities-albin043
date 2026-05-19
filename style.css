@@ -583,3 +583,39 @@ margin-bottom: 40px;
 .wrapper .registration-actions .btn-outline:hover {
   background: #f3f4f6;
 }
+
+/* ==========================================
+   PASSWORD TOGGLE STYLES
+   ========================================== */
+
+/* Gives the input box a relative boundary for absolute positioning */
+.password-container {
+  position: relative;
+}
+
+/* Adjusts padding on the right side so text doesn't slide under the eye icon */
+.password-container input {
+  padding-right: 45px !important;
+}
+
+/* Positions the eye button cleanly on the right inside the input field */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+.toggle-password:hover {
+  color: #111827;
+}
+
