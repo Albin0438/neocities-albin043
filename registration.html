@@ -25,19 +25,20 @@
         </header>
 
         <div class="wrapper">
-            <form onsubmit="handleRegistration(event)">
+            <form action="/register" method="POST">
 
                 <h1>Registration</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="username" required>
+                    <input type="text" name="username" placeholder="username" required>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="email" required>
+                    <input type="email" name="email" placeholder="email" required>
                 </div>
                 <div class="input-box password-container">
                     <input 
                         type="password" 
                         id="password"
+                        name="password"
                         placeholder="new password" 
                         minlength="15"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{15,}"
