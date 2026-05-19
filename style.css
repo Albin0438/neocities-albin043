@@ -439,3 +439,147 @@ margin-bottom: 40px;
   border-radius: 8px;
   margin: 20px 0 40px;
 }
+
+/* ==========================================
+   LOGIN PAGE STYLES
+   ========================================== */
+
+/* Centers the login card on the screen */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Keeps it centered vertically */
+  padding: 20px;
+}
+
+/* Reuses your existing card aesthetic (white background, subtle border) */
+.wrapper form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Spacing and styling for input fields */
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-box input:focus {
+  border-color: #111827; /* Darkens border on click */
+  background: white;
+}
+
+/* Remember me & Forgot password layout */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.remember-forgot label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.remember-forgot a {
+  color: #e11d48; /* Reuses your theme's red/pink color */
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Fixes the button to be full width inside the form */
+.wrapper .btn {
+  display: block;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.wrapper .btn:hover {
+  background: #1f2937;
+}
+
+/* Registration link at the bottom */
+.register-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #6b7280;
+}
+
+.register-link a {
+  color: #e11d48;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   REGISTRATION PAGE ONLY STYLES
+   ========================================== */
+
+/* Spreads registration buttons side-by-side */
+.registration-actions {
+  display: flex !important; /* Forces layout mode */
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Increases specificity to override the full-width block styles */
+.wrapper .registration-actions .btn,
+.wrapper .registration-actions .btn-outline {
+  flex: 1;
+  display: block;
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Distinct outline style for the registration reset button */
+.wrapper .registration-actions .btn-outline {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.wrapper .registration-actions .btn-outline:hover {
+  background: #f3f4f6;
+}
