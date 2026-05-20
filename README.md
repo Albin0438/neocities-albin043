@@ -3,7 +3,7 @@
 A minimal personal website built with pure HTML and CSS.
 
 🔗 **Live Website:**
-https://albin0438.github.io/neocities-albin043/
+https://albin0438.github.io/albin043-portfolio-website/
 
 ---
 
