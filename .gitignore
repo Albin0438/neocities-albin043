@@ -1,2 +1,7 @@
+# Ignore node_modules anywhere in the project
 node_modules/
+**/node_modules/
+
+# Ignore SQLite database files anywhere
 *.db
+**/ *.db
