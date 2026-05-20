@@ -1,6 +1,19 @@
 /* ==========================================================================
-   1. CORE PORTFOLIO BASE (Originally style.css)
+   THE MATRIX OVERRIDE ENGINE v1999.05.20
+   "Wake up, Albin... The internet has you."
    ========================================================================== */
+
+/* CRT Glow and Scanline Effects System */
+@keyframes pulseGlow {
+  0% { text-shadow: 0 0 4px #00ff41, 0 0 10px rgba(0,255,65,0.3); }
+  50% { text-shadow: 0 0 8px #00ff41, 0 0 18px rgba(0,255,65,0.6); }
+  100% { text-shadow: 0 0 4px #00ff41, 0 0 10px rgba(0,255,65,0.3); }
+}
+
+@keyframes scanlineDrop {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
 
 * {
   margin: 0;
@@ -10,38 +23,73 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #050805; /* Deep, infinite void green-black */
 }
 
+/* Base Terminal Simulation Setup */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #f9fafb;
-  color: #111827;
-  line-height: 1.7;
-  transition: background 0.3s, color 0.3s;
+  font-family: "Courier New", Courier, monospace, "Fira Code";
+  background: #050805;
+  color: #00ff41; /* Pure Matrix Green Terminal Output */
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* CRT Screen Simulation Overlay Layer */
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 99999;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none; /* Let user clicks pass through the glass tube screen */
+}
+
+/* Moving terminal scanline */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 5px;
+  background: rgba(0, 255, 65, 0.08);
+  animation: scanlineDrop 8s linear infinite;
+  z-index: 99998;
+  pointer-events: none;
 }
 
 main {
-  max-width: 720px;
+  max-width: 760px;
   margin: auto;
   padding: 0 20px;
 }
 
-/* HEADER & NAVIGATION */
+/* TERMINAL DIRECTORY HEADER */
 header {
   max-width: 900px;
-  margin: 30px auto 50px;
+  margin: 40px auto 60px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  border-bottom: 1px dashed rgba(0, 255, 65, 0.3);
+  padding-bottom: 20px;
 }
 
 .logo a {
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 900;
+  font-size: 22px;
   text-decoration: none;
-  color: #111827;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #00ff41;
+}
+
+.logo a::before {
+  content: "[√] ";
+  color: #00ff41;
 }
 
 nav {
@@ -52,717 +100,338 @@ nav {
 nav a {
   margin-left: 20px;
   text-decoration: none;
-  color: #6b7280;
-  font-size: 14px;
+  color: #005f18; /* Dark unlinked code string */
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
   transition: 0.2s;
 }
 
 nav a:hover,
 nav a.active {
-  color: #111827;
+  color: #00ff41;
+  text-shadow: 0 0 6px #00ff41;
 }
 
-/* HERO SECTION */
+nav a.active::before {
+  content: "> ";
+}
+
+/* TERMINAL DISPLAY BLOCKS */
 .hero {
   margin-bottom: 60px;
+  border: 1px solid #00ff41;
+  padding: 30px;
+  background: rgba(0, 15, 3, 0.6);
+  box-shadow: inset 0 0 15px rgba(0, 255, 65, 0.2);
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  animation: pulseGlow 3s infinite alternate;
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 16px;
+  color: #a3ffa3; /* Slightly desaturated console output text for contrast */
 }
 
 .small-note {
-  font-size: 14px;
-  color: #6b7280;
-  margin-top: 10px;
+  font-size: 13px;
+  color: #008f24;
+  font-family: monospace;
 }
 
-/* UNIVERSAL BUTTON SYSTEM */
+.small-note::before {
+  content: "SYSTEM_INFO // ";
+}
+
+/* HARDWARE TERMINAL ACTION OVERRIDES */
 .hero-buttons {
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
 }
 
 .btn {
-  background: #111827;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 6px;
+  background: #00ff41;
+  color: #050805;          /* Crisp deep dark text on bright green */
+  font-weight: 900;        /* Thick font weight to cut through scanlines */
+  padding: 10px 20px;
   text-decoration: none;
   font-size: 14px;
   display: inline-block;
-  border: none;
+  border: 1px solid #00ff41;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  transition: 0.2s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.6);
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-  background: #1f2937;
+  background: #ffffff;
+  color: #050805;
+  border-color: #ffffff;
+  box-shadow: 0 0 20px #ffffff;
   transform: translateY(-1px);
 }
 
 .btn-outline {
-  border: 1px solid #d1d5db;
-  padding: 10px 18px;
-  border-radius: 6px;
+  border: 1px solid #00ff41;
+  padding: 10px 20px;
   text-decoration: none;
-  color: #111827;
+  color: #00ff41;          /* Green text on transparent background */
+  font-weight: bold;
   font-size: 14px;
   display: inline-block;
-  background: transparent;
+  background: rgba(0, 255, 65, 0.05);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .btn-outline:hover {
-  background: #f3f4f6;
+  background: rgba(0, 255, 65, 0.2);
+  color: #ffffff;
+  box-shadow: 0 0 12px #00ff41;
 }
 
-/* SECTIONS & SHARED UTILITIES */
+/* SECTION SHELLS AND CORE HEADINGS */
 section {
   margin-bottom: 60px;
+  padding-bottom: 20px;
 }
 
-h2 {
-  margin-bottom: 15px;
+h2, h3 {
+  margin-bottom: 20px;
   font-size: 22px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed rgba(0, 255, 65, 0.2);
+  padding-bottom: 5px;
 }
 
+h3 {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+/* DECRYPTED NOTE CALLOUTS */
 .highlight {
-  background: #eef2ff;
-  border-left: 4px solid #6366f1;
+  background: rgba(255, 0, 60, 0.05);
+  border: 1px solid #ff003c; /* Red alert glitch boundary */
+  color: #ff6685;
   padding: 20px;
   margin: 30px 0;
-  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.1);
+}
+
+.highlight::before {
+  content: "[SECURITY ANOMALY ALERT] ";
+  font-weight: bold;
 }
 
 .disclaimer {
-  background: #f9fafb;
-  padding: 15px;
-  border-left: 4px solid #111827;
-  border-radius: 8px;
+  background: rgba(0, 255, 65, 0.02);
+  padding: 20px;
+  border: 1px solid rgba(0, 255, 65, 0.4);
   margin: 20px 0 40px;
 }
 
-/* IMAGES */
-.hero-image {
-  margin: 30px 0;
-  padding: 0 10px;
-}
-
+/* IMAGE MATRICES */
 .hero-image img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  filter: grayscale(100%) brightness(80%) contrast(120%) sepia(100%) hue-rotate(85deg); /* Forces images into greenish mainframe outputs */
+  border: 1px solid #00ff41;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
 }
 
-.caption {
-  font-size: 14px;
-  color: #6b7280;
-  margin-top: 5px;
-}
-
-/* CARDS GRIDS (Projects, Uses, Blogs, Links, Tools) */
-.projects-grid,
-.uses-grid,
-.blog-grid,
-.links-grid,
-.tools-grid {
+/* BACKDOOR LINKS & GRID COMPONENT NETWORKS */
+.projects-grid, .uses-grid, .blog-grid, .links-grid, .tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
-.project-card,
-.use-card,
-.blog-card,
-.link-card,
-.contact-card,
-.tool-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #f1f5f9;
-  transition: 0.2s;
+.project-card, .use-card, .blog-card, .link-card, .contact-card, .tool-card, .tool-container {
+  background: rgba(0, 10, 3, 0.8);
+  padding: 25px;
+  border: 1px solid #005f18;
+  transition: all 0.25s ease;
 }
 
-.project-card:hover,
-.use-card:hover,
-.blog-card:hover,
-.link-card:hover,
-.tool-card:hover {
-  transform: translateY(-4px);
-  border-color: #e5e7eb;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+.project-card:hover, .use-card:hover, .blog-card:hover, .link-card:hover, .tool-card:hover, .tool-container:hover {
+  transform: translateY(-2px);
+  border-color: #00ff41;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
 }
 
-.project-card ul,
-.use-card ul,
-.link-card ul {
-  padding-left: 18px;
-  margin-top: 10px;
+ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: "[x] "; /* Hacker terminal tracking style list bullets */
 }
 
-.project-card li,
-.use-card li,
-.link-card li {
-  margin-bottom: 6px;
-}
-
-/* UNIVERSAL LINKS COLOR & HEADINGS */
-.project-card a,
-.blog-card a,
-.link-card a,
-footer a,
-.post a,
-.project a,
-.tool-container a {
-  color: #e11d48;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.project-card a:hover,
-.blog-card a:hover,
-.link-card a:hover,
-.post a:hover,
-.tool-container a:hover {
-  text-decoration: underline;
-}
-
-.tool-card h2 {
+li {
+  color: #a3ffa3;
   margin-bottom: 8px;
-  font-size: 18px;
-  color: #111827;
 }
 
-.tool-card p {
-  color: #6b7280;
-  font-size: 14px;
-  margin-bottom: 0;
+/* GLITCH RED & SKY CYAN NETWORK CONNECTIONS */
+.project-card a, .blog-card a, .link-card a, footer a, .post a, .project a, .tool-container a, .container a {
+  color: #38bdf8; /* The "Blue Pill" pathway */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* The Freeing "Red Pill" Route for core article hyperlinks */
+.container p a, .tool-container a {
+  color: #ff003c;
+  text-shadow: 0 0 2px rgba(255,0,60,0.5);
+}
+
+.project-card a:hover, .blog-card a:hover, .link-card a:hover, .post a:hover, .container a:hover {
+  text-decoration: underline;
+  color: #ffffff !important;
+  text-shadow: 0 0 8px #00ff41;
 }
 
 .date {
-  font-size: 12px;
-  color: #9ca3af;
-  display: block;
+  font-size: 13px;
+  color: #008f24;
   margin-bottom: 6px;
+  font-family: monospace;
 }
 
-/* CONTACT CONTAINER ELEMENTS */
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+.date::before {
+  content: "TIMESTAMP // ";
 }
 
-.contact-item {
-  display: block;
-  padding: 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #111827;
-  border: 1px solid #e5e7eb;
-  transition: 0.2s;
-}
-
-.contact-item:hover {
-  background: #f9fafb;
-}
-
-
-/* ==========================================================================
-   2. REFACTORED TOOLS DASHBOARD (Originally stylus.css Dashboard Layer)
-   ========================================================================== */
-
-/* Integrated Theme Toggle Switcher */
-.theme-toggle {
-  position: absolute;
-  top: 0px;
-  right: 20px;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
-  background: white;
-  color: #111827;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.theme-toggle:hover {
-  background: #f3f4f6;
-  transform: scale(1.03);
-}
-
-/* Unified Hub Subtitle Layout */
-.intro {
-  text-align: center;
-  margin-bottom: 35px;
-  color: #6b7280;
-  font-size: 15px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Input Search Box Element */
-.search-box {
+/* SEARCH & DATA CAPTURE HOOKS */
+.search-box, textarea, input {
   width: 100%;
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  margin-bottom: 35px;
+  padding: 14px;
+  background: #000a03;
+  color: #00ff41;
+  border: 1px solid #005f18;
+  font-family: "Courier New", monospace;
   font-size: 16px;
   outline: none;
-  background: white;
-  color: #111827;
   transition: all 0.2s ease;
 }
 
-.search-box:focus {
-  border-color: #111827;
-  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.05);
+.search-box:focus, textarea:focus, input:focus {
+  border-color: #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
 }
 
-
-/* ==========================================================================
-   3. ADAPTED SUB-TOOLS ENGINE LAYER (Originally tools.css Utilities)
-   ========================================================================== */
-
-/* Converted Main Shell Container Wrapper */
-.tool-container {
-  max-width: 700px;
-  margin: 20px auto 60px;
-  padding: 30px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #f1f5f9;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-/* Global Scope Text Adjustments inside interactive sheets */
-.tool-container p {
-  margin-top: 5px;
-  margin-bottom: 15px;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-label {
-  display: block;
-  margin-top: 18px;
-  margin-bottom: 6px;
-  color: #374151;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* Sanitized Forms Inputs Fields */
-textarea,
-input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  background: white;
-  color: #111827;
-  font-size: 15px;
-  outline: none;
-  margin-top: 6px;
-  margin-bottom: 18px;
-  transition: all 0.2s ease;
-}
-
-textarea::placeholder,
-input::placeholder {
-  color: #9ca3af;
-}
-
-textarea:focus,
-input:focus {
-  border-color: #111827;
-  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.05);
-}
-
-/* Standardized Tools Functional Action Buttons */
-.tool-container button {
-  margin-top: 8px;
-  margin-right: 10px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 6px;
-  background: #111827;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.tool-container button:hover {
-  background: #1f2937;
-  transform: translateY(-1px);
-}
-
-.tool-container button:active {
-  transform: scale(0.97);
-}
-
-/* Multi-State Controller Buttons */
-.button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-.button-group button {
-  opacity: 0.65;
-  background: #4b5563;
-}
-
-.button-group button.active {
-  opacity: 1;
-  background: #16a34a; /* Direct functional confirmation Green */
-  transform: scale(1.02);
-}
-
-/* Processed Dynamic Interactive Output Canvas Panels */
+/* DYNAMIC COMPUTATION outputs */
 .output {
   margin-top: 25px;
   padding: 16px;
-  background: #f9fafb;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
+  background: #000;
+  border: 1px dashed #00ff41;
   font-size: 18px;
-  color: #e11d48; /* Aligned with rose link token */
-  text-align: center;
-  min-height: 52px;
-  animation: toolContentFade 0.2s ease-out;
+  color: #00ff41;
+  text-shadow: 0 0 4px #00ff41;
 }
 
-@keyframes toolContentFade {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Custom Math & String Output Formatter Variations */
-.result-highlight {
-  color: #e11d48;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-#number {
-  font-size: 32px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-#history {
-  font-size: 14px;
-  color: #6b7280;
-}
-
-#diceResult {
-  font-size: 24px;
-  letter-spacing: 4px;
-}
-
-.answer-yes { color: #16a34a; font-weight: 600; }
-.answer-no { color: #dc2626; font-weight: 600; }
-.answer-maybe { color: #d97706; font-weight: 600; }
-
-
-/* ==========================================================================
-   4. COMPONENT MINI-GAMES MODULE LAYOUTS
-   ========================================================================== */
-
-/* Sudoku Numerical Board Matrix */
-#sudoku {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 5px;
-  max-width: 400px;
-  margin: 25px auto;
-}
-
+/* COMPONENT MINI-GAMES MATRIX OVERRIDES */
 #sudoku input {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 4px;
-  border: 1px solid #cbd5e1;
-  background: white;
-  color: #111827;
-  text-align: center;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
+  background: #000 !important;
+  color: #00ff41 !important;
+  border: 1px solid #005f18 !important;
 }
-
 #sudoku input:focus {
-  background: #f3f4f6;
-  border-color: #111827;
+  border-color: #00ff41 !important;
 }
-
-#sudoku input:disabled {
-  background: #e5e7eb;
-  color: #4b5563;
-  font-weight: bold;
-  border-color: #d1d5db;
-}
-
-.sudoku-correct { background: #16a34a !important; color: white !important; }
-.sudoku-wrong { background: #dc2626 !important; color: white !important; }
-.sudoku-empty { background: #f59e0b !important; color: white !important; }
-
-/* Grid Strategy Board (Tic-Tac-Toe / SOS) */
-#grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 250px;
-  margin: 25px auto;
-  gap: 12px;
-}
-
 #grid button {
-  width: 100%;
-  aspect-ratio: 1;
-  font-size: 30px;
-  font-weight: bold;
-  border-radius: 8px;
-  border: 1px solid #cbd5e1;
-  background: #f9fafb;
-  color: #111827;
-  margin: 0;
-  padding: 0;
-  transition: all 0.2s ease;
+  background: #000a03 !important;
+  color: #00ff41 !important;
+  border: 1px solid #005f18 !important;
 }
-
 #grid button:hover {
-  background: #f3f4f6;
-  transform: translateY(-2px);
+  border-color: #00ff41 !important;
+  background: rgba(0,255,65,0.05) !important;
 }
 
-#grid button:active {
-  transform: scale(0.95);
+/* REVERT THEME SWAP INTERFACES (Since we broken out completely) */
+.theme-toggle {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  padding: 6px 12px;
+  border: 1px solid #00ff41;
+  background: transparent;
+  color: #00ff41;
+  font-family: monospace;
 }
 
-.sos-win {
-  background: #dc2626 !important;
-  color: white !important;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
-}
-
-
-/* ==========================================================================
-   5. DEEP DARK MODE EMULATION (Cleanly Mapped Overrides)
-   ========================================================================== */
-
+/* DISCONNECTING THE STANDARD LIGHT LAYER FOR FIXED SYSTEM RESISTANCE */
 .light-mode {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #110000; /* Glitched inverted dark room alternate payload */
+  color: #ff3333;
 }
+.light-mode ::selection { background: #ff003c; color: #000; }
 
-.light-mode .logo a,
-.light-mode nav a.active,
-.light-mode h1,
-.light-mode h2,
-.light-mode label {
-  color: #e2e8f0;
-}
-
-.light-mode nav a {
-  color: #94a3b8;
-}
-.light-mode nav a:hover {
-  color: #ffffff;
-}
-
-/* Card Component Ecosystem Shadows */
-.light-mode .project-card,
-.light-mode .use-card,
-.light-mode .blog-card,
-.light-mode .link-card,
-.light-mode .contact-card,
-.light-mode .tool-card,
-.light-mode .tool-container {
-  background: #1e293b;
-  border-color: #334155;
-}
-
-.light-mode .tool-card h2 {
-  color: #ffffff;
-}
-
-.light-mode p,
-.light-mode .tool-card p,
-.light-mode .small-note,
-.light-mode .caption,
-.light-mode .intro,
-.light-mode .tool-container p,
-.light-mode #history {
-  color: #94a3b8;
-}
-
-/* Interactive Input States in Dark Settings */
-.light-mode input,
-.light-mode textarea,
-.light-mode .search-box,
-.light-mode .output,
-.light-mode #sudoku input,
-.light-mode #grid button {
-  background: #0f172a;
-  color: #e2e8f0;
-  border-color: #334155;
-}
-
-.light-mode textarea::placeholder,
-.light-mode input::placeholder,
-.light-mode .search-box::placeholder {
-  color: #475569;
-}
-
-.light-mode textarea:focus,
-.light-mode input:focus,
-.light-mode .search-box:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-}
-
-/* Button System Overrides */
-.light-mode .btn,
-.light-mode .tool-container button {
-  background: #3b82f6;
-  color: white;
-}
-.light-mode .btn:hover,
-.light-mode .tool-container button:hover {
-  background: #2563eb;
-}
-
-.light-mode .btn-outline {
-  border-color: #475569;
-  color: #e2e8f0;
-}
-.light-mode .btn-outline:hover {
-  background: #1e293b;
-}
-
-.light-mode .theme-toggle {
-  background: #1e293b;
-  color: #e2e8f0;
-  border-color: #334155;
-}
-.light-mode .theme-toggle:hover {
-  background: #334155;
-}
-
-/* Hyperlinks Flash Shifts */
-.light-mode .project-card a,
-.light-mode .blog-card a,
-.light-mode .link-card a,
-.light-mode footer a,
-.light-mode .post a,
-.light-mode .project a,
-.light-mode .tool-container a,
-.light-mode .result-highlight {
-  color: #38bdf8; /* Cyan blue accent choice across system dark blocks */
-}
-
-/* Dark Components Overrides */
-.light-mode #sudoku input:focus,
-.light-mode #grid button:hover {
-  background: #1e293b;
-}
-.light-mode #sudoku input:disabled {
-  background: #1e293b;
-  color: #64748b;
-  border-color: transparent;
-}
-
-
-/* ==========================================================================
-   6. GLOBAL RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
-
+/* RE-STYLING ARTICLE FOOTER CHASSIS */
 footer {
   text-align: center;
-  margin: 80px 0 40px;
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.light-mode footer {
-  color: #475569;
-}
-
-.footer-icons {
-  margin-bottom: 10px;
+  margin: 100px 0 40px;
+  font-size: 13px;
+  color: #005f18;
+  border-top: 1px dashed rgba(0, 255, 65, 0.3);
+  padding-top: 30px;
 }
 
 .footer-icons a {
-  margin: 0 10px;
+  margin: 0 12px;
+  text-transform: uppercase;
 }
 
+/* MOBILE CONSOLE COMPRESSION ELEMENTS */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 20px;
   }
-
   .theme-toggle {
     position: relative;
-    top: 0;
-    right: 0;
-    margin-bottom: 10px;
+    top: 0; right: 0;
   }
-
   nav {
     width: 100%;
-    gap: 10px;
+    gap: 12px;
   }
-
-  nav a {
-    margin: 0;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .hero-buttons a, 
-  .tool-container button {
-    width: 100%;
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 8px;
-  }
-
-  section {
-    margin-bottom: 40px;
-  }
-  
-  .tool-container {
-    padding: 20px 16px;
-  }
+  nav a { margin-left: 0; margin-right: 15px; }
+  .hero h1 { font-size: 24px; }
 }
+
+/* UNIVERSAL POST IMAGES */
+.container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 8px;
+  border: 1px solid #005f18; /* Dark green matrix border */
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.15); /* Soft terminal phosphor glow */
+  filter: grayscale(20%) brightness(95%) contrast(110%); /* Subtle matrix color grading */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container img:hover {
+  border-color: #00ff41; /* Lights up on hover */
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
