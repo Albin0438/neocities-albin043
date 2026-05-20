@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Word Counter Tool - Free Online</title>
+  <meta name="description" content="Free online word counter tool to count words and characters instantly. Fast and easy to use.">
+
+  <link rel="icon" href="../favicon/icons8-favicon-48.png">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/tools.css">
+
+  </head>
+<body>
+
+<header>
+  <div class="logo"><a href="../index.html">Albin</a></div>
+
+  <nav>
+    <a href="../index.html" class="active">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../uses.html">Uses</a>
+    <a href="../links.html">Links</a>
+    <a href="../tools.html">Toolkit</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="tool-container">
+
+  <a href="../index.html">← Back to Home</a>
+
+  <p>
+    This free word counter tool helps you quickly count words and characters.
+    Useful for writing, blogging, and assignments.
+  </p>
+
+  <textarea 
+    id="textInput" 
+    rows="10" 
+    placeholder="Type or paste your text here..."
+    aria-label="Text input"
+  ></textarea>
+
+  <div class="output">
+    <p>Words: <span id="wordCount">0</span></p>
+    <p>Characters: <span id="charCount">0</span></p>
+  </div>
+
+  <button onclick="copyText()">Copy Text</button>
+
+</main>
+
+<footer>
+  <hr>
+
+  <div class="footer-icons">
+    <a href="https://github.com/Albin0438" target="_blank">GitHub</a>
+    <a href="https://mastodon.social/deck/@Mystify2317" target="_blank">Mastodon</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="support.html">Support</a>
+  </div>
+
+  <p>© 2026 Albin Jose. All rights reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="../tools.js"></script>
+<script src="../js/word-counter.js"></script>
+
+</body>
+</html>

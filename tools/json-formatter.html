@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Formatter</title>
+  <link rel="icon" href="../favicon/icons8-favicon-48.png">
+  <link rel="stylesheet" href="../style.css">
+
+  </head>
+<body>
+
+<header>
+  <div class="logo"><a href="../index.html">Albin</a></div>
+
+  <nav>
+    <a href="../index.html" class="active">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../uses.html">Uses</a>
+    <a href="../links.html">Links</a>
+    <a href="../tools.html">Toolkit</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-container">
+  <textarea id="jsonInput" rows="10" placeholder="Paste JSON here..."></textarea>
+  <button onclick="formatJSON()">Format</button>
+
+  <textarea id="jsonOutput" rows="10" placeholder="Formatted JSON..." readonly></textarea>
+</div>
+
+</body>
+
+<script src="../tools.js"></script>
+<script src="../js/json-formatter.js"></script>
+
+</html>

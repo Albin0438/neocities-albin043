@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yes / No Picker</title>
+
+  <link rel="icon" href="../favicon/icons8-favicon-48.png">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/tools.css">
+
+  </head>
+<body>
+
+<header>
+  <div class="logo"><a href="../index.html">Albin</a></div>
+
+  <nav>
+    <a href="../index.html" class="active">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../uses.html">Uses</a>
+    <a href="../links.html">Links</a>
+    <a href="../tools.html">Toolkit</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="tool-container">
+  <a href="../index.html">← Back</a>
+
+  <label>Ask a question</label>
+  <input type="text" id="question" placeholder="Should I go out today?">
+
+  <button onclick="pickAnswer()">Get Answer</button>
+
+  <div class="output">
+    <p id="answerResult">Answer: -</p>
+  </div>
+</div>
+
+<footer>
+  <hr>
+
+  <div class="footer-icons">
+    <a href="https://github.com/Albin0438" target="_blank">GitHub</a>
+    <a href="https://mastodon.social/deck/@Mystify2317" target="_blank">Mastodon</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="support.html">Support</a>
+  </div>
+
+  <p>© 2026 Albin Jose. All rights reserved.</p>
+</footer>
+
+</body>
+
+<script src="../tools.js"></script>
+<script src="../js/yes-no-picker.js"></script>
+
+</html>
